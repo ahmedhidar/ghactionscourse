@@ -1,0 +1,29 @@
+on:
+  push:
+    branches:
+      - main
+      - "release/**"
+    patths:
+      - 'src/**'
+      - 'docs/**'
+      - '.github/workflows/push-pr.yml'
+
+  pull_request:
+    branches:
+      - main
+      - "release/**"
+    paths:
+      - 'src/**'
+      - 'docs/**'
+      - '.github/workflows/push-pr.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4.3.1
+
+      - name: run tests
+        run: npm test
