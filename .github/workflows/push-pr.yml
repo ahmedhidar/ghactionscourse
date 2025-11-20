@@ -3,7 +3,7 @@ on:
     branches:
       - main
       - "release/**"
-    patths:
+    paths:
       - 'src/**'
       - 'docs/**'
       - '.github/workflows/push-pr.yml'
